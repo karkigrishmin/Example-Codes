@@ -16,9 +16,9 @@ const fruits = [
   },
 ];
 
-// const booleanValue = fruits.every((fruit) => fruit.price >= 20);
+const booleanValue = fruits.every((fruit) => fruit.price >= 20);
 
-// console.log(booleanValue);
+console.log(booleanValue);
 
 //--------------some()---------------
 //if only one elements in the array pass the test then it returns true as a result
@@ -35,3 +35,31 @@ console.log(everyValue); //false
 
 const somevalue = names.some((name) => name.length > 3);
 console.log(somevalue); //true
+
+//-------------reduce()------------
+//it takes two argument,one is iterator function and next is initial value
+//-----------------Example1-----------------
+const numbers = [10, 15, 20, 40];
+
+const sum = numbers.reduce((sum, number) => sum + number, 0);
+console.log(sum);
+
+//-------Example2---------
+const colors = [
+  {
+    colour: "red",
+  },
+  {
+    colour: "green",
+  },
+  {
+    colour: "blue",
+  },
+];
+
+const reducedVal = colors.reduce((prevValue, color) => {
+  prevValue.push(color.colour);
+  return prevValue;
+}, []);
+
+console.log(reducedVal);
